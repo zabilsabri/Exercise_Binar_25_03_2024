@@ -53,7 +53,10 @@ app.get('/vehicles/:id', async (req, res) => {
             console.error('Error executing query', err);
             res.status(500).send('Internal Server Error');
             } else {
-            res.json(result.rows);
+            res.json({
+                status: 'success',
+                data: result.rows,
+            });
         }
     });
     } catch (error) {
