@@ -55,7 +55,7 @@ app.get('/vehicles/:id', async (req, res) => {
             } else {
             res.json({
                 status: 'success',
-                data: result.rows,
+                data: result.rows[0],
             });
         }
     });
@@ -78,7 +78,6 @@ app.post('/vehicles', async (req, res) => {
               });
             }
         });
-
     } catch (error) {
         console.error('Error executing query', error);
     }
